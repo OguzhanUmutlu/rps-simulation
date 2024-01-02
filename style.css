@@ -10,4 +10,20 @@ body {
 
 .game > .player {
     position: absolute;
+    width: 16px;
+    height: 16px;
+    background-size: 100% 100%;
+    background-position: -50% -50%;
+}
+
+.rock {
+    background-image: url("./assets/rock.png");
+}
+
+.scissors {
+    background-image: url("./assets/scissors.png");
+}
+
+.paper {
+    background-image: url("./assets/paper.png");
 }

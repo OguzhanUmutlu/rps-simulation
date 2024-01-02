@@ -2,7 +2,7 @@ const game = document.querySelector(".game");
 const players = [];
 // Note that it is arranged like this for a reason, realise that the next index of any index is the target of that index.
 // Rock wants scissors, scissors wants paper, paper wants rock. And the avoiding item is the opposite.
-const emojis = ["🪨", "✂️", "📜"];
+const types = ["rock", "scissors", "paper"];
 const options = {
     players: 50
 };
@@ -18,7 +18,7 @@ function addPlayer() {
     const div = document.createElement("div");
     div.classList.add("player");
     const type = Math.floor(Math.random() * 3);
-    div.innerText = emojis[type];
+    div.classList.add(types[type]);
     game.appendChild(div);
     players.push({type, div, x: Math.random() * innerWidth, y: Math.random() * innerHeight});
 }
@@ -60,8 +60,9 @@ function render() {
         const avoidDist = avoid ? calcDist(avoid, player) : Infinity;
 
         if (avoidDist <= 20) {
+            player.div.classList.remove(types[player.type]);
             player.type = avoid.type;
-            player.div.innerText = emojis[avoid.type];
+            player.div.classList.add(types[avoid.type]);
             continue;
         }
 
