@@ -1,0 +1,13 @@
+body {
+    overflow: hidden;
+    font-family: Calibri, serif;
+}
+
+.options > div {
+    display: flex;
+    align-items: center;
+}
+
+.game > .player {
+    position: absolute;
+}
