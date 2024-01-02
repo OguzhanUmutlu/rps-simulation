@@ -11,7 +11,7 @@ body {
 .game > .player {
     position: absolute;
     width: 16px;
-    height: 16px;
+    aspect-ratio: 1 / 1;
     background-size: 100% 100%;
     background-position: -50% -50%;
 }

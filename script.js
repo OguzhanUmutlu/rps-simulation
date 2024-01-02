@@ -42,12 +42,20 @@ function moveTo(player, to, m) {
 function render() {
     requestAnimationFrame(render);
 
+    for (const player of players) {
+        player.div.style.left = player.x + "px";
+        player.div.style.top = player.y + "px";
+    }
+}
+
+render();
+
+function update() {
     while (players.length > options.players) {
         const p = players.splice(-1, 1);
         if (p[0]) p[0].div.remove();
     }
     while (players.length < options.players) addPlayer();
-
     for (const player of players) {
         const wantType = (player.type + 1) % 3;
         const avoidType = (player.type + 2) % 3;
@@ -73,13 +81,11 @@ function render() {
         if (player.y < 0) player.y = 0;
         if (player.x > innerWidth - 30) player.x = innerWidth - 30;
         if (player.y > innerHeight - 30) player.y = innerHeight - 30;
-
-        player.div.style.left = player.x + "px";
-        player.div.style.top = player.y + "px";
     }
+    setTimeout(update);
 }
 
-render();
+update();
 
 setInterval(() => {
     for (const c of optCache) {
