@@ -2,8 +2,34 @@
     <title>RPS Life Simulation</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+<div class="bg">
+    <div class="bg-element bg-rock"></div>
+    <div class="bg-element bg-paper"></div>
+    <div class="bg-element bg-scissors"></div>
+</div>
 <div class="game"></div>
 <div class="options">
-    <div>Players: <input type="range" id="o-i-players" value="50" max="1000"> <span id="o-v-players"></span></div>
+    <div>Players: <input type="range" id="o-i-players" value="50" max="500"> <span id="o-v-players"></span></div>
+    <div>Time: <input type="range" id="o-i-time" value="100" max="1000"> <span id="o-v-time"></span>%</div>
+    <div>Distance dep: <input type="range" id="o-i-distanceDep" value="1" min="0" max="1"> <span id="o-v-distanceDep"></span></div>
+    <div>Acceleration: <input type="range" id="o-i-acceleration" value="0" max="100"> <span
+            id="o-v-acceleration"></span>%
+    </div>
+    <div>Friction: <input type="range" id="o-i-friction" value="10" max="100"> <span id="o-v-friction"></span>%</div>
+    <div>Background opacity: <input type="range" id="o-i-bgOpacity" value="0" max="70"> <span id="o-v-bgOpacity"></span>%</div>
 </div>
-<script type="module" src="./script.js"></script>
+<div class="amounts">
+    <div>
+        <div class="rock icon"></div>
+        <span id="rock-amount"></span>
+    </div>
+    <div>
+        <div class="paper icon"></div>
+        <span id="paper-amount"></span>
+    </div>
+    <div>
+        <div class="scissors icon"></div>
+        <span id="scissors-amount"></span>
+    </div>
+</div>
+<script src="./script.js"></script>
