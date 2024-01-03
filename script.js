@@ -16,7 +16,7 @@ const options = {
     acceleration: 0,
     friction: 10,
     bgOpacity: 0,
-    magnet: 0
+    magnet: 1
 };
 const optDefaults = {
     time: 100,
@@ -24,7 +24,7 @@ const optDefaults = {
     acceleration: 0,
     friction: 10,
     bgOpacity: 0,
-    magnet: 0
+    magnet: 1
 };
 const optCache = [];
 const optFn = {
