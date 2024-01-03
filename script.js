@@ -16,7 +16,7 @@ const options = {
     acceleration: 0,
     friction: 10,
     bgOpacity: 0,
-    distanceDep: 0
+    magnet: 0
 };
 const optDefaults = {
     time: 100,
@@ -24,7 +24,7 @@ const optDefaults = {
     acceleration: 0,
     friction: 10,
     bgOpacity: 0,
-    distanceDep: 0
+    magnet: 0
 };
 const optCache = [];
 const optFn = {
@@ -152,7 +152,7 @@ function fixedUpdate() {
             if (dist > 800) continue;
             if (dist <= 20 && p2.type === avoidType) switchPlayer(player, avoidType);
             if (dist < 18) continue;
-            moveTo(player, p2, (p2.type === wantType ? 1 : -1) * (options.distanceDep ? 1 / dist * 25 : 1) / 2);
+            moveTo(player, p2, (p2.type === wantType ? 1 : -1) * (options.magnet ? 1 / dist * 50 : 1 / 10));
         }
         boundPlayer(player);
     }

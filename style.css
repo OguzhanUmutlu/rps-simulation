@@ -101,3 +101,7 @@ body {
     font-size: 30px;
     height: 100%;
 }
+
+input {
+    outline: none;
+}
